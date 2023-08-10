@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,10 +19,6 @@ namespace AreaCalculatorApp
     /// <summary>s
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    //enum typeOfShape
-    //{
-    //    circle, rectangle, square, trapezoid, triangle
-    //}
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -112,10 +109,6 @@ namespace AreaCalculatorApp
         private void vypocitatButton_Click(object sender, RoutedEventArgs e)
         {
 
-            //get the information from form and set other variables using switch - case
-            //save numbers from user inputs using binding ? or just .Text
-            //put the information into the right class method, which will return the result
-
             // get name of the selected shape:
             ComboBoxItem ComboItem = (ComboBoxItem)shapeComboBox.SelectedItem;
             string shape = ComboItem.Name;
@@ -126,59 +119,34 @@ namespace AreaCalculatorApp
             switch (shape)
             {
                 case "circle":
-                    //Binding rCircle = new Binding("Text");
-                    //rCircle.Source = rTextBox;
-                    double rCircle = int.Parse(rTextBox.Text);
+                    float rCircle = (Regex.IsMatch(rTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(rTextBox.Text) : 0;
+                    //float rCircle = float.Parse(rTextBox.Text);
                     Circle myCircle = new Circle(rCircle);
                     vysledek = myCircle.GetResult();
-                    //
                     break;
                 case "rectangle":
-                    //Binding aRectangle = new Binding("Text");
-                    //aRectangle.Source = aTextBox;
-                    //Binding bRectangle = new Binding("Text");
-                    //bRectangle.Source = bTextBox;
-                    double aRectangle = int.Parse(aTextBox.Text);
-                    double bRectangle = int.Parse(bTextBox.Text);
+                    float aRectangle = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(aTextBox.Text) : 0;
+                    float bRectangle = (Regex.IsMatch(bTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(bTextBox.Text) : 0;
                     Rectangle myRectangle = new Rectangle(aRectangle, bRectangle);
                     vysledek = myRectangle.GetResult();
-
                     break;
                 case "square":
-                    //Binding aSquare = new Binding("Text");
-                    //aSquare.Source = aTextBox;
-
-                    double aSquare = int.Parse(aTextBox.Text);
+                    float aSquare = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(aTextBox.Text) : 0;
                     Square mySquare = new Square(aSquare);
                     vysledek = mySquare.GetResult();
-
                     break;
                 case "trapezoid":
-                    //Binding aTrapezoid = new Binding("Text");
-                    //aTrapezoid.Source = aTextBox;
-                    //Binding cTrapezoid = new Binding("Text");
-                    //cTrapezoid.Source = cTextBox;
-                    //Binding vTrapezoid = new Binding("Text");
-                    //vTrapezoid.Source = vTextBox;
-                    double aTrapezoid = int.Parse(aTextBox.Text);
-                    double cTrapezoid = int.Parse(cTextBox.Text);
-                    double vTrapezoid = int.Parse(vTextBox.Text);
+                    float aTrapezoid = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(aTextBox.Text) : 0;
+                    float cTrapezoid = (Regex.IsMatch(cTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(cTextBox.Text) : 0;
+                    float vTrapezoid = (Regex.IsMatch(vTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(vTextBox.Text) : 0;
                     Trapezoid myTrapezoid = new Trapezoid(aTrapezoid, cTrapezoid, vTrapezoid);
                     vysledek = myTrapezoid.GetResult();
-
-
                     break;
                 case "triangle":
-                    //Binding aTriangle = new Binding("Text");
-                    //aTriangle.Source = aTextBox;
-                    //Binding vTriangle = new Binding("Text");
-                    //vTriangle.Source = vTextBox;
-                    double aTriangle = int.Parse(aTextBox.Text);
-                    double vTriangle = int.Parse(vTextBox.Text);
+                    float aTriangle = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(aTextBox.Text) : 0;
+                    float vTriangle = (Regex.IsMatch(vTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(vTextBox.Text) : 0;
                     Rectangle myTriangle = new Rectangle(aTriangle, vTriangle);
                     vysledek = myTriangle.GetResult();
-
-
                     break;
                 default:
                     MessageBox.Show("sorry, there's an error");

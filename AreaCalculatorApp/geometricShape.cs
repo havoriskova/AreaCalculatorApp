@@ -9,7 +9,7 @@ namespace AreaCalculatorApp
 {
     public abstract class GeometricShape
     {
-        public virtual double GetResult()
+        public virtual float GetResult()
         {
             return 0;
         }
@@ -17,15 +17,15 @@ namespace AreaCalculatorApp
 
     public class Circle : GeometricShape
     {
-        public Circle(double rnum)
+        public Circle(float rnum)
         {
-            Rnum = rnum;
+            R = rnum;
         }
         
-        public double Rnum { get; }
-            public override double GetResult()
+        public float R { get; }
+            public override float GetResult()
             {
-                return Math.Round(Math.PI * Math.Pow(Rnum, 2));
+                return (float)(Math.PI * Math.Pow(R, 2));
 
             }
        
@@ -33,71 +33,71 @@ namespace AreaCalculatorApp
 
     public class Rectangle : GeometricShape
     {
-          public Rectangle(double aNum, double bNum)
+          public Rectangle(float aNum, float bNum)
             {
-                Anum = aNum;
-                Bnum = bNum;
+                A = aNum;
+                B = bNum;
             }
 
-        public double Anum { get; }
-        public double Bnum { get; }
+        public float A { get; }
+        public float B { get; }
         
-        public override double GetResult()
+        public override float GetResult()
         {
-            return Math.Round(Anum * Bnum);
+            return (float)(A * B);
         }
     }
 
 
     public class Triangle : GeometricShape
     {
-        public Triangle(double aNum, double vNum)
+        public Triangle(float aNum, float vNum)
         {
-            Anum = aNum;
-            Vnum = vNum;
+            A = aNum;
+            V = vNum;
         }
 
-        public double Anum { get; }
-        public double Vnum { get; }
+        public float A { get; }
+        public float V { get; }
 
-        public override double GetResult()
+        public override float GetResult()
         {
-            return Math.Round((Vnum * Anum) / 2);
+            return (float)((V * A) / 2);
         }
     }
 
 
     public class Square : GeometricShape
     {
-        public Square(double aNum)
+        public Square(float aNum)
         {
-            Anum = aNum;
+            A = aNum;
         }
 
-        public double Anum { get; }
+        public float A { get; }
 
-        public override double GetResult()
+        public override float GetResult()
         {
-            return Math.Round(Anum * Anum);
+            return (float)(A * A);
         }
     }
 
     public class Trapezoid : GeometricShape
     {
-        public Trapezoid(double aNum, double cNum, double vNum)
+        public Trapezoid(float aNum, float cNum, float vNum)
         {
-            Anum = aNum;
-            Cnum = cNum;
-            Vnum = vNum;
+            A = aNum;
+            C = cNum;
+            V = vNum;
         }
 
-        public double Anum { get; }
-        public double Cnum { get; }
-        public double Vnum { get; }
+        public float A { get; }
+        public float C { get; }
+        public float V { get; }
 
-        public override double GetResult()
+        public override float GetResult()
         {
-            return Math.Round(((Anum + Cnum) * Vnum) / 2);
+            return (float)(((A + C) * V) / 2);
         }
     }
 
