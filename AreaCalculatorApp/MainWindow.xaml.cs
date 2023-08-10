@@ -24,5 +24,67 @@ namespace AreaCalculatorApp
         {
             InitializeComponent();
         }
+
+        private void vybratButton_Click(object sender, RoutedEventArgs e)
+        {
+            // get name of the selected shape:
+            ComboBoxItem ComboItem = (ComboBoxItem)shapeComboBox.SelectedItem;
+            string shape = ComboItem.Name;
+
+            //adjust the form according to the selected shape:
+            if (shape == "circle")
+            {
+               
+                Uri resourceUri = new Uri("/static/circle.png", UriKind.Relative);
+                imageOfShape.Source = new BitmapImage(resourceUri);
+            }
+            else if (shape == "rectangle")
+            {
+                
+                Uri resourceUri = new Uri("/static/rectangle.png", UriKind.Relative);
+                imageOfShape.Source = new BitmapImage(resourceUri);
+            }
+            else if (shape == "square")
+            {
+                
+                Uri resourceUri = new Uri("/static/square.png", UriKind.Relative);
+                imageOfShape.Source = new BitmapImage(resourceUri);
+            }
+            else if (shape == "trapezoid")
+            {
+                
+                Uri resourceUri = new Uri("/static/trapezoid.png", UriKind.Relative);
+                imageOfShape.Source = new BitmapImage(resourceUri);
+            }
+            else if (shape == "triangle")
+            {
+                
+                Uri resourceUri = new Uri("/static/triangle.png", UriKind.Relative);
+                imageOfShape.Source = new BitmapImage(resourceUri);
+            }
+            else
+                MessageBox.Show("sorry, there's an error");
+
+
+
+
+        }
+
+        private void vypocitatButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            //get the information from form and set other variables:
+            //
+            // double vysledek = 0;
+
+
+            //put the information into the right class method, which will return the result:
+
+
+            // put the result into the TextBlock:
+            // vysledekTextBlock.Text = vysledek.ToString();
+
+
+        }
     }
 }

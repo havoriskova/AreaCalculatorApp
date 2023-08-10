@@ -10,14 +10,37 @@
 
   <ItemGroup>
     <None Remove="static\circle.png" />
+    <None Remove="static\rectangle.png" />
+    <None Remove="static\square.png" />
+    <None Remove="static\trapezoid.png" />
+    <None Remove="static\triangle.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="static\geometric.ico" />
+    <Resource Include="static\rectangle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="static\geometric.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="static\circle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="static\square.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="static\trapezoid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="static\triangle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

@@ -26,17 +26,17 @@
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
             <TextBlock Text="Geometrický tvar:" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
             <ComboBox Name="shapeComboBox" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Margin="20,0,10,0" SelectedIndex="0" Width="200">
-                <ComboBoxItem Content="Kruh"/>
-                <ComboBoxItem Content="Čtverec"/>
-                <ComboBoxItem Content="Obdelník"/>
-                <ComboBoxItem Content="Lichoběžník"/>
-                <ComboBoxItem Content="Trojuhelník"/>
+                <ComboBoxItem Content="Kruh" Name="circle"/>
+                <ComboBoxItem Content="Čtverec" Name="square"/>
+                <ComboBoxItem Content="Obdelník" Name="rectangle"/>
+                <ComboBoxItem Content="Lichoběžník" Name="trapezoid"/>
+                <ComboBoxItem Content="Trojuhelník" Name="triangle"/>
             </ComboBox>
-            <Button Width="100" Margin="20,5,0, 5"  Name="vybratButton" Content="Vybrat" VerticalAlignment="Center" Height="25"/>
+            <Button Width="100" Margin="20,5,0, 5"  Name="vybratButton" Content="Vybrat" VerticalAlignment="Center" Height="25" Click="vybratButton_Click"/>
         </StackPanel>
 
         <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
-            <Image Source="static/circle.png" Stretch="None" Panel.ZIndex="2" HorizontalAlignment="Left" Width="647" VerticalAlignment="Top"/>
+            <Image Name="imageOfShape" Source="static/circle.png" Stretch="None" Panel.ZIndex="2" HorizontalAlignment="Left" Width="647" VerticalAlignment="Top"/>
         </StackPanel>
 
         <StackPanel Grid.Column="0" Grid.Row="2"  Orientation="Vertical">
@@ -54,11 +54,11 @@
 
         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
             <TextBlock Text="Výsledek" VerticalAlignment="Top" Margin="0,5,0,0" FontWeight="Bold" FontSize="14"/>
-            <TextBlock Text="0" Margin="30,8,0,0" Width="50" VerticalAlignment="Top"/>
+            <TextBlock Name="vysledekTextBlock" Text="0" Margin="30,8,0,0" Width="50" VerticalAlignment="Top"/>
         </StackPanel>
 
         <StackPanel  Grid.Column="2" Grid.Row="3">
-            <Button Width="100" Margin="0,2,0,0"  Name="vypocitatButton" Content="Vypočítat" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Width="100" Margin="0,2,0,0"  Name="vypocitatButton" Content="Vypočítat" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Click="vypocitatButton_Click"/>
         </StackPanel>
 
 
