@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AreaCalculatorApp"
         mc:Ignorable="d"
-        Title="Výpočet obsahu" Height="450" Width="800"
-        MinHeight="450" MinWidth="800"
+        Title="Výpočet obsahu" Height="500
+        " Width="800"
+        MinHeight="500" MinWidth="800"
         Background="#FFD7D7D7">
     <Grid Margin="20, 50, 20, 20"  >
         <Grid.RowDefinitions>
@@ -39,16 +40,34 @@
             <Image Name="imageOfShape" Source="static/circle.png" Stretch="None" Panel.ZIndex="2" HorizontalAlignment="Left" Width="647" VerticalAlignment="Top"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="0" Grid.Row="2"  Orientation="Vertical">
-            <TextBlock Text="Parametry výpočtu" FontWeight="Bold" TextDecorations="Underline"/>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                <Label Content="_a" Grid.Column="0" Grid.Row="1" Margin="20, 0, 10, 0" Target="{Binding ElementName=aTextBox}" VerticalAlignment="Center"/>
-                <TextBox Name="aTextBox" Margin="0,0,0,0" Width="100" VerticalAlignment="Center"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
+        <StackPanel Grid.Column="0" Grid.Row="2"  Orientation="Vertical" Margin="0,0,0,13" Grid.RowSpan="2">
+            <TextBlock Text="Parametry výpočtu" Margin="0, 10, 0, 10" FontWeight="Bold" TextDecorations="Underline"/>
+
+            <StackPanel Name="aStackPanel" Orientation = "Horizontal" VerticalAlignment = "Top" Visibility="Collapsed" >
+                <Label Content = "_a" Grid.Column = "0" Grid.Row = "1" Margin = "20, 0, 10, 0" Target = "{Binding ElementName=aTextBox}" VerticalAlignment = "Center" />
+                <TextBox Name = "aTextBox" Margin = "0,0,0,0" Width = "100" VerticalAlignment = "Center" />
+            </StackPanel >
+
+            <StackPanel Name="bStackPanel" Orientation="Horizontal" VerticalAlignment="Top" Visibility="Collapsed" >
                 <Label Content="_b" Grid.Column="0" Grid.Row="1" Margin="20, 0, 10, 0" Target="{Binding ElementName=bTextBox}" VerticalAlignment="Center"/>
                 <TextBox Name="bTextBox" Margin="0,0,0,0" Width="100" VerticalAlignment="Center"/>
             </StackPanel>
+
+            <StackPanel Name="cStackPanel" Orientation = "Horizontal" VerticalAlignment = "Top" Visibility="Collapsed" >
+                <Label Content = "_c" Grid.Column = "0" Grid.Row = "1" Margin = "20, 0, 10, 0" Target = "{Binding ElementName=cTextBox}" VerticalAlignment = "Center" />
+                <TextBox Name = "cTextBox" Margin = "0,0,0,0" Width = "100" VerticalAlignment = "Center" />
+            </StackPanel >
+
+            <StackPanel Name="rStackPanel" Orientation="Horizontal" VerticalAlignment="Top">
+                <Label Content="_r" Grid.Column="0" Grid.Row="1" Margin="20, 0, 10, 0" Target="{Binding ElementName=rTextBox}" VerticalAlignment="Center"/>
+                <TextBox Name="rTextBox" Margin="0,0,0,0" Width="100" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Name="vStackPanel" Orientation = "Horizontal" VerticalAlignment = "Top" Visibility="Collapsed" >
+                <Label Content = "_v" Grid.Column = "0" Grid.Row = "1" Margin = "20, 0, 10, 0" Target = "{Binding ElementName=vTextBox}" VerticalAlignment = "Center" />
+                <TextBox Name = "vTextBox" Margin = "0,0,0,0" Width = "100" VerticalAlignment = "Center" />
+            </StackPanel >
+
 
         </StackPanel>
 

@@ -34,33 +34,41 @@ namespace AreaCalculatorApp
             //adjust the form according to the selected shape:
             if (shape == "circle")
             {
-               
                 Uri resourceUri = new Uri("/static/circle.png", UriKind.Relative);
                 imageOfShape.Source = new BitmapImage(resourceUri);
+
+            //    r
+
             }
             else if (shape == "rectangle")
             {
-                
                 Uri resourceUri = new Uri("/static/rectangle.png", UriKind.Relative);
                 imageOfShape.Source = new BitmapImage(resourceUri);
+
+                //     a, b
             }
             else if (shape == "square")
             {
-                
                 Uri resourceUri = new Uri("/static/square.png", UriKind.Relative);
                 imageOfShape.Source = new BitmapImage(resourceUri);
+
+                //  a
             }
             else if (shape == "trapezoid")
             {
-                
                 Uri resourceUri = new Uri("/static/trapezoid.png", UriKind.Relative);
                 imageOfShape.Source = new BitmapImage(resourceUri);
+
+
+                //    a, c, v
             }
             else if (shape == "triangle")
             {
-                
                 Uri resourceUri = new Uri("/static/triangle.png", UriKind.Relative);
                 imageOfShape.Source = new BitmapImage(resourceUri);
+
+
+                //   a, v
             }
             else
                 MessageBox.Show("sorry, there's an error");
@@ -75,14 +83,19 @@ namespace AreaCalculatorApp
 
             //get the information from form and set other variables:
             //
-            // double vysledek = 0;
+            //Binding aBinding = new Binding("Text");
+            //aBinding.Source = aTextBox;
+            //vysledekTextBlock.SetBinding(TextBlock.TextProperty, aBinding);
+
+
+            double vysledek = 5;
 
 
             //put the information into the right class method, which will return the result:
 
 
             // put the result into the TextBlock:
-            // vysledekTextBlock.Text = vysledek.ToString();
+            vysledekTextBlock.Text = vysledek.ToString();
 
 
         }
