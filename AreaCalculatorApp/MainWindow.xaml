@@ -1,0 +1,69 @@
+﻿<Window x:Class="AreaCalculatorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AreaCalculatorApp"
+        mc:Ignorable="d"
+        Title="Výpočet obsahu" Height="450" Width="800"
+        MinHeight="450" MinWidth="800"
+        Background="#FFD7D7D7">
+    <Grid Margin="20, 50, 20, 20"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41"/>
+            <RowDefinition Height="151"/>
+            <RowDefinition/>
+            <RowDefinition Height="58.04"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="225"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <TextBlock Text="Geometrický tvar:" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <ComboBox Name="shapeComboBox" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Margin="20,0,10,0" SelectedIndex="0" Width="200">
+                <ComboBoxItem Content="Kruh"/>
+                <ComboBoxItem Content="Čtverec"/>
+                <ComboBoxItem Content="Obdelník"/>
+                <ComboBoxItem Content="Lichoběžník"/>
+                <ComboBoxItem Content="Trojuhelník"/>
+            </ComboBox>
+            <Button Width="100" Margin="20,5,0, 5"  Name="vybratButton" Content="Vybrat" VerticalAlignment="Center" Height="25"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Image Source="static/circle.png" Stretch="None" Panel.ZIndex="2" HorizontalAlignment="Left" Width="647" VerticalAlignment="Top"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="2"  Orientation="Vertical">
+            <TextBlock Text="Parametry výpočtu" FontWeight="Bold" TextDecorations="Underline"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <Label Content="_a" Grid.Column="0" Grid.Row="1" Margin="20, 0, 10, 0" Target="{Binding ElementName=aTextBox}" VerticalAlignment="Center"/>
+                <TextBox Name="aTextBox" Margin="0,0,0,0" Width="100" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="_b" Grid.Column="0" Grid.Row="1" Margin="20, 0, 10, 0" Target="{Binding ElementName=bTextBox}" VerticalAlignment="Center"/>
+                <TextBox Name="bTextBox" Margin="0,0,0,0" Width="100" VerticalAlignment="Center"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+            <TextBlock Text="Výsledek" VerticalAlignment="Top" Margin="0,5,0,0" FontWeight="Bold" FontSize="14"/>
+            <TextBlock Text="0" Margin="30,8,0,0" Width="50" VerticalAlignment="Top"/>
+        </StackPanel>
+
+        <StackPanel  Grid.Column="2" Grid.Row="3">
+            <Button Width="100" Margin="0,2,0,0"  Name="vypocitatButton" Content="Vypočítat" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </StackPanel>
+
+
+    </Grid>
+
+
+
+</Window>
