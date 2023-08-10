@@ -45,27 +45,27 @@
 
             <StackPanel Name="aStackPanel" Orientation = "Horizontal" VerticalAlignment = "Top" Visibility="Collapsed" >
                 <Label Content = "_a" Grid.Column = "0" Grid.Row = "1" Margin = "20, 0, 10, 0" Target = "{Binding ElementName=aTextBox}" VerticalAlignment = "Center" />
-                <TextBox Name = "aTextBox" Margin = "0,0,0,0" Width = "100" VerticalAlignment = "Center" />
+                <TextBox Name = "aTextBox" Margin = "0,0,0,0" Width = "100" VerticalAlignment = "Center" MaxLength="10" />
             </StackPanel >
 
             <StackPanel Name="bStackPanel" Orientation="Horizontal" VerticalAlignment="Top" Visibility="Collapsed" >
                 <Label Content="_b" Grid.Column="0" Grid.Row="1" Margin="20, 0, 10, 0" Target="{Binding ElementName=bTextBox}" VerticalAlignment="Center"/>
-                <TextBox Name="bTextBox" Margin="0,0,0,0" Width="100" VerticalAlignment="Center"/>
+                <TextBox Name="bTextBox" Margin="0,0,0,0" Width="100" VerticalAlignment="Center" MaxLength="10"/>
             </StackPanel>
 
             <StackPanel Name="cStackPanel" Orientation = "Horizontal" VerticalAlignment = "Top" Visibility="Collapsed" >
                 <Label Content = "_c" Grid.Column = "0" Grid.Row = "1" Margin = "20, 0, 10, 0" Target = "{Binding ElementName=cTextBox}" VerticalAlignment = "Center" />
-                <TextBox Name = "cTextBox" Margin = "0,0,0,0" Width = "100" VerticalAlignment = "Center" />
+                <TextBox Name = "cTextBox" Margin = "0,0,0,0" Width = "100" VerticalAlignment = "Center" MaxLength="10" />
             </StackPanel >
 
             <StackPanel Name="rStackPanel" Orientation="Horizontal" VerticalAlignment="Top">
                 <Label Content="_r" Grid.Column="0" Grid.Row="1" Margin="20, 0, 10, 0" Target="{Binding ElementName=rTextBox}" VerticalAlignment="Center"/>
-                <TextBox Name="rTextBox" Margin="0,0,0,0" Width="100" VerticalAlignment="Center"/>
+                <TextBox Name="rTextBox" Margin="0,0,0,0" Width="100" VerticalAlignment="Center" MaxLength="10"/>
             </StackPanel>
 
             <StackPanel Name="vStackPanel" Orientation = "Horizontal" VerticalAlignment = "Top" Visibility="Collapsed" >
                 <Label Content = "_v" Grid.Column = "0" Grid.Row = "1" Margin = "20, 0, 10, 0" Target = "{Binding ElementName=vTextBox}" VerticalAlignment = "Center" />
-                <TextBox Name = "vTextBox" Margin = "0,0,0,0" Width = "100" VerticalAlignment = "Center" />
+                <TextBox Name = "vTextBox" Margin = "0,0,0,0" Width = "100" VerticalAlignment = "Center"  MaxLength="10"/>
             </StackPanel >
 
 
