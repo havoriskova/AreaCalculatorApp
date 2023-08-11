@@ -25,7 +25,7 @@ namespace AreaCalculatorApp
         public double R { get; }
             public override double GetResult()
             {
-                return (Math.PI * Math.Pow(R, 2));
+                return (double)(Math.PI * R * R);
 
             }
        

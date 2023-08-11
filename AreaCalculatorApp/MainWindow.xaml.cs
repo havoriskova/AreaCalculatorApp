@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -119,32 +120,34 @@ namespace AreaCalculatorApp
             switch (shape)
             {
                 case "circle":
-                    double rCircle = (Regex.IsMatch(rTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? double.Parse(rTextBox.Text.Replace(',', '.')) : 0;
+                    double rCircle = (Regex.IsMatch(rTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(rTextBox.Text.Replace(',', '.')) : 0;
                     //float rCircle = float.Parse(rTextBox.Text);
+                    //consoleTextBlock.Text = rCircle.ToString("F");
+                    //consoleTextBlock.Text = Convert.ToDouble(rTextBox.Text.Replace(',', '.')).ToString();
                     Circle myCircle = new Circle(rCircle);
                     vysledek = myCircle.GetResult();
                     break;
                 case "rectangle":
-                    float aRectangle = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(aTextBox.Text) : 0;
-                    float bRectangle = (Regex.IsMatch(bTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(bTextBox.Text) : 0;
+                    double aRectangle = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(aTextBox.Text.Replace(',', '.')) : 0;
+                    double bRectangle = (Regex.IsMatch(bTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(bTextBox.Text.Replace(',', '.')) : 0;
                     Rectangle myRectangle = new Rectangle(aRectangle, bRectangle);
                     vysledek = myRectangle.GetResult();
                     break;
                 case "square":
-                    float aSquare = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(aTextBox.Text) : 0;
+                    double aSquare = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(aTextBox.Text.Replace(',', '.')) : 0; ;
                     Square mySquare = new Square(aSquare);
                     vysledek = mySquare.GetResult();
                     break;
                 case "trapezoid":
-                    float aTrapezoid = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(aTextBox.Text) : 0;
-                    float cTrapezoid = (Regex.IsMatch(cTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(cTextBox.Text) : 0;
-                    float vTrapezoid = (Regex.IsMatch(vTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(vTextBox.Text) : 0;
+                    double aTrapezoid = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(aTextBox.Text.Replace(',', '.')) : 0;
+                    double cTrapezoid = (Regex.IsMatch(cTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(cTextBox.Text.Replace(',', '.')) : 0;
+                    double vTrapezoid = (Regex.IsMatch(vTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(vTextBox.Text.Replace(',', '.')) : 0;
                     Trapezoid myTrapezoid = new Trapezoid(aTrapezoid, cTrapezoid, vTrapezoid);
                     vysledek = myTrapezoid.GetResult();
                     break;
                 case "triangle":
-                    float aTriangle = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(aTextBox.Text) : 0;
-                    float vTriangle = (Regex.IsMatch(vTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(vTextBox.Text) : 0;
+                    double aTriangle = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(aTextBox.Text.Replace(',', '.')) : 0;
+                    double vTriangle = (Regex.IsMatch(vTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(vTextBox.Text.Replace(',', '.')) : 0;
                     Triangle myTriangle = new Triangle(aTriangle, vTriangle);
                     vysledek = myTriangle.GetResult();
                     break;
@@ -155,7 +158,7 @@ namespace AreaCalculatorApp
            
 
             // put the result into the TextBlock:
-            vysledekTextBlock.Text = vysledek.ToString("");
+            vysledekTextBlock.Text = vysledek.ToString("F");
 
 
         }
