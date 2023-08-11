@@ -119,7 +119,7 @@ namespace AreaCalculatorApp
             switch (shape)
             {
                 case "circle":
-                    float rCircle = (Regex.IsMatch(rTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(rTextBox.Text) : 0;
+                    double rCircle = (Regex.IsMatch(rTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? double.Parse(rTextBox.Text.Replace(',', '.')) : 0;
                     //float rCircle = float.Parse(rTextBox.Text);
                     Circle myCircle = new Circle(rCircle);
                     vysledek = myCircle.GetResult();
@@ -145,7 +145,7 @@ namespace AreaCalculatorApp
                 case "triangle":
                     float aTriangle = (Regex.IsMatch(aTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(aTextBox.Text) : 0;
                     float vTriangle = (Regex.IsMatch(vTextBox.Text, @"^-?[0-9]*\.?[0-9]+$")) ? float.Parse(vTextBox.Text) : 0;
-                    Rectangle myTriangle = new Rectangle(aTriangle, vTriangle);
+                    Triangle myTriangle = new Triangle(aTriangle, vTriangle);
                     vysledek = myTriangle.GetResult();
                     break;
                 default:
@@ -155,7 +155,7 @@ namespace AreaCalculatorApp
            
 
             // put the result into the TextBlock:
-            vysledekTextBlock.Text = vysledek.ToString();
+            vysledekTextBlock.Text = vysledek.ToString("");
 
 
         }

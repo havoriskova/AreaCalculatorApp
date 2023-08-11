@@ -9,7 +9,7 @@ namespace AreaCalculatorApp
 {
     public abstract class GeometricShape
     {
-        public virtual float GetResult()
+        public virtual double GetResult()
         {
             return 0;
         }
@@ -17,15 +17,15 @@ namespace AreaCalculatorApp
 
     public class Circle : GeometricShape
     {
-        public Circle(float rnum)
+        public Circle(double rnum)
         {
             R = rnum;
         }
         
-        public float R { get; }
-            public override float GetResult()
+        public double R { get; }
+            public override double GetResult()
             {
-                return (float)(Math.PI * Math.Pow(R, 2));
+                return (Math.PI * Math.Pow(R, 2));
 
             }
        
@@ -33,71 +33,71 @@ namespace AreaCalculatorApp
 
     public class Rectangle : GeometricShape
     {
-          public Rectangle(float aNum, float bNum)
+          public Rectangle(double aNum, double bNum)
             {
                 A = aNum;
                 B = bNum;
             }
 
-        public float A { get; }
-        public float B { get; }
+        public double A { get; }
+        public double B { get; }
         
-        public override float GetResult()
+        public override double GetResult()
         {
-            return (float)(A * B);
+            return (A * B);
         }
     }
 
 
     public class Triangle : GeometricShape
     {
-        public Triangle(float aNum, float vNum)
+        public Triangle(double aNum, double vNum)
         {
             A = aNum;
             V = vNum;
         }
 
-        public float A { get; }
-        public float V { get; }
+        public double A { get; }
+        public double V { get; }
 
-        public override float GetResult()
+        public override double GetResult()
         {
-            return (float)((V * A) / 2);
+            return (V * A / 2);
         }
     }
 
 
     public class Square : GeometricShape
     {
-        public Square(float aNum)
+        public Square(double aNum)
         {
             A = aNum;
         }
 
-        public float A { get; }
+        public double A { get; }
 
-        public override float GetResult()
+        public override double GetResult()
         {
-            return (float)(A * A);
+            return (A * A);
         }
     }
 
     public class Trapezoid : GeometricShape
     {
-        public Trapezoid(float aNum, float cNum, float vNum)
+        public Trapezoid(double aNum, double cNum, double vNum)
         {
             A = aNum;
             C = cNum;
             V = vNum;
         }
 
-        public float A { get; }
-        public float C { get; }
-        public float V { get; }
+        public double A { get; }
+        public double C { get; }
+        public double V { get; }
 
-        public override float GetResult()
+        public override double GetResult()
         {
-            return (float)(((A + C) * V) / 2);
+            return (((A + C) * V) / 2);
         }
     }
 
