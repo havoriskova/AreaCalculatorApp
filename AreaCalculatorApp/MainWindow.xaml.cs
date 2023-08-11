@@ -121,9 +121,6 @@ namespace AreaCalculatorApp
             {
                 case "circle":
                     double rCircle = (Regex.IsMatch(rTextBox.Text, @"^-?[0-9]*\.?[0-9]*\,?[0-9]+$")) ? Convert.ToDouble(rTextBox.Text.Replace(',', '.')) : 0;
-                    //float rCircle = float.Parse(rTextBox.Text);
-                    //consoleTextBlock.Text = rCircle.ToString("F");
-                    //consoleTextBlock.Text = Convert.ToDouble(rTextBox.Text.Replace(',', '.')).ToString();
                     Circle myCircle = new Circle(rCircle);
                     vysledek = myCircle.GetResult();
                     break;

@@ -22,7 +22,7 @@ namespace AreaCalculatorApp
             R = rnum;
         }
         
-        public double R { get; }
+        public double R { get; set; }
             public override double GetResult()
             {
                 return (double)(Math.PI * R * R);
